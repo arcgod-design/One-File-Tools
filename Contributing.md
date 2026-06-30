@@ -368,17 +368,19 @@ Add an entry for your theme in `themes.json` under the `"resume"` or `"portfolio
   "id": "minimal",
   "name": "Minimal",
   "description": "A brief description of your theme's style and features.",
-  "file": "resume/themes/minimal.hbs",
-  "screenshot": "resume/themes/minimal.png",
   "author": "Your Name"
 }
 ```
 
-This is how your theme appears on the landing page — similar to how `tools.json` works for tools.
+This is how your theme appears on the landing page — similar to how `tools.json` works for tools. Everything is derived from the `id`:
+
+- `resume/themes/minimal.hbs` — the Handlebars template
+- `resume/themes/minimal.png` — the screenshot
+- `resume/themes/minimal.html` — the generated output
 
 ### Add a screenshot
 
-Take a screenshot of your generated theme and save it as a `.png` file next to the `.hbs` template (same name, e.g., `resume/themes/minimal.png`). The screenshot is shown on the landing page theme card.
+Take a screenshot of your generated theme and save it as `[id].png` next to the `.hbs` template (e.g., `resume/themes/minimal.png`). The screenshot is shown on the landing page theme card.
 
 ### Build and test
 

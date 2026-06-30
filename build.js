@@ -312,16 +312,21 @@ function buildPortfolioCards() {
 }
 
 // Resume & portfolio theme data from themes.json
+// Convention: [pillar]/themes/[id].hbs is the template, [id].png is the screenshot, [id].html is the output
 const themesData = JSON.parse(fs.readFileSync(path.join(__dirname, "themes.json"), "utf-8"));
-function mapTheme(t) {
-  return {
-    ...t,
-    file: t.file.replace(/\.hbs$/, ".html"),
-    hasScreenshot: t.screenshot && fs.existsSync(path.join(__dirname, t.screenshot))
+function mapTheme(pillar) {
+  return function (t) {
+    var base = pillar + "/themes/" + t.id;
+    return {
+      ...t,
+      file: base + ".html",
+      screenshot: base + ".png",
+      hasScreenshot: fs.existsSync(path.join(__dirname, base + ".png"))
+    };
   };
 }
-const resumeThemes = themesData.resume.map(mapTheme);
-const portfolioThemes = themesData.portfolio.map(mapTheme);
+const resumeThemes = themesData.resume.map(mapTheme("resume"));
+const portfolioThemes = themesData.portfolio.map(mapTheme("portfolio"));
 
 // Build JSON data for the script block (used by modal + search)
 const siteJson = JSON.stringify({ title: site.title, tagline: site.tagline, url: site.url, github: site.github });
