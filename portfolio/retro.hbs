@@ -1518,7 +1518,7 @@
                       {{#has techStack}}
                         <div class="tech-chips">
                           {{#techStack}}
-                            <span class="tech-chip">{{this}}</span>
+                            <span class="tech-chip">{{.}}</span>
                           {{/techStack}}
                         </div>
                       {{/has}}
@@ -1526,7 +1526,7 @@
                       {{#has highlights}}
                         <ul class="project-highlights">
                           {{#highlights}}
-                            <li>{{this}}</li>
+                            <li>{{.}}</li>
                           {{/highlights}}
                         </ul>
                       {{/has}}
@@ -1807,7 +1807,7 @@
                       <div class="academic-title">Interests</div>
                       <div class="interest-chips">
                         {{#interests}}
-                          <span class="interest-chip">{{this}}</span>
+                          <span class="interest-chip">{{.}}</span>
                         {{/interests}}
                       </div>
                     </div>
