@@ -504,8 +504,8 @@ console.log(greet("World"));
 - [ ] Share via link
 `;
 
-const STORAGE_KEYS = { content: "markdown-previewer-content", theme: "markdown-previewer-theme", view: "markdown-previewer-view"};
-      
+      const STORAGE_KEYS = { content: "markdown-previewer-content", theme: "markdown-previewer-theme", view: "markdown-previewer-view" };
+
       // ── marked config ──
       marked.setOptions({
         breaks: true,
@@ -539,23 +539,23 @@ const STORAGE_KEYS = { content: "markdown-previewer-content", theme: "markdown-p
       } catch {
         editor.value = DEFAULT;
       }
-      
+
       render();
-      
+
       editor.addEventListener("input", () => {
         try {
           localStorage.setItem(STORAGE_KEYS.content, editor.value);
         } catch {}
         render();
       });
-      
+
       try {
         const savedTheme = localStorage.getItem(STORAGE_KEYS.theme);
         if (savedTheme === "dark") {
           toggleTheme();
         }
       } catch {}
-      
+
       try {
         const savedView = localStorage.getItem(STORAGE_KEYS.view);
         setView(savedView || "both");

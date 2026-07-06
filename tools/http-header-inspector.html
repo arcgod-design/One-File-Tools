@@ -314,9 +314,7 @@ Built for One File Tools.
           <input type="text" id="urlInput" placeholder="https://example.com" autocomplete="off" spellcheck="false" />
           <button class="btn" id="btnInspect" type="button">Inspect</button>
         </div>
-        <div class="note">
-          <strong>Heads up:</strong> browsers only expose headers the target server allows via CORS (typically via <code>Access-Control-Expose-Headers</code>). For cross-origin requests you may see a limited subset of headers even on a successful response — this is a browser security restriction, not a bug in this tool.
-        </div>
+        <div class="note"><strong>Heads up:</strong> browsers only expose headers the target server allows via CORS (typically via <code>Access-Control-Expose-Headers</code>). For cross-origin requests you may see a limited subset of headers even on a successful response — this is a browser security restriction, not a bug in this tool.</div>
 
         <div class="status-bar" id="statusBar" hidden>
           <span class="pill" id="statusPill">—</span>
@@ -482,13 +480,7 @@ Built for One File Tools.
 
       btnCopy.addEventListener("click", async () => {
         if (!lastResult) return;
-        const lines = [
-          lastResult.method + " " + lastResult.url,
-          "Status: " + lastResult.status + " " + lastResult.statusText,
-          "Time: " + lastResult.durationMs + " ms",
-          "",
-          ...lastResult.headers.map((h) => h.name + ": " + h.value)
-        ];
+        const lines = [lastResult.method + " " + lastResult.url, "Status: " + lastResult.status + " " + lastResult.statusText, "Time: " + lastResult.durationMs + " ms", "", ...lastResult.headers.map((h) => h.name + ": " + h.value)];
         const text = lines.join("\n");
         if (!navigator.clipboard || !navigator.clipboard.writeText) {
           alert("Clipboard API not available in this browser/context.");
