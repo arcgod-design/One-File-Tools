@@ -171,6 +171,31 @@
       ]
     },
     {
+      "id": "aria-role-reference",
+      "name": "ARIA Role Reference",
+      "shortDescription": "A fast, offline reference for common WAI-ARIA roles with attributes, semantic alternatives, and examples.",
+      "longDescription": "## ARIA Role Reference\n\nBrowse and search common WAI-ARIA roles as a quick offline reference. Each role shows its purpose, commonly used attributes, the preferred semantic HTML alternative, a copyable code example, and common mistakes to avoid.\n\n### Features\n\n- Searchable, category-grouped list of common ARIA roles\n- Instant filtering by role name, category, or purpose\n- Purpose and description for each role\n- Commonly used ARIA attributes shown as chips\n- Semantic HTML alternative highlighted where one exists\n- Copyable code example demonstrating correct usage\n- Common accessibility mistakes for each role\n- Fully responsive, keyboard accessible, and works offline",
+      "category": "accessibility",
+      "tags": [
+        "a11y",
+        "accessibility",
+        "aria",
+        "html",
+        "reference",
+        "semantic-html",
+        "utility",
+        "web-development"
+      ],
+      "techStack": [
+        "CSS3",
+        "Google Fonts",
+        "HTML5",
+        "Vanilla JS"
+      ],
+      "difficulty": "Easy",
+      "status": "live"
+    },
+    {
       "id": "aspect-ratio-calculator",
       "name": "Aspect Ratio Calculator",
       "shortDescription": "Calculate and simplify aspect ratios instantly. Supports common presets and outputs decimal ratio and CSS padding-bottom values.",
@@ -286,6 +311,27 @@
         "Vanilla JS"
       ],
       "difficulty": "Medium",
+      "status": "live"
+    },
+    {
+      "id": "case-converter",
+      "name": "Case Converter",
+      "shortDescription": "Transform text between UPPERCASE, lowercase, camelCase, snake_case, and more.",
+      "longDescription": "## Case Converter\n\nA tool that transforms input text between different case and casing conventions. Useful for developers who need to quickly reformat variable names, headings, or copy between styles (e.g. converting a sentence into camelCase for a JS variable, or into CONSTANT_CASE for an env var), as well as writers who want quick title-casing or sentence-casing for headings and copy.\n\n### Features\n- Convert text to UPPERCASE, lowercase, Title Case, and Sentence case\n- Convert to programming case styles: camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE\n- Fun/novelty conversions: aLtErNaTiNg CaSe and iNVERSE CaSe\n- Live character and word count for the input\n- One-click \"Copy result\" button with confirmation feedback\n- Smart word-splitting that correctly re-splits existing camelCase/snake_case/kebab-case input before converting to a new format\n- Fully keyboard accessible, dark mode support",
+      "category": "text",
+      "tags": [
+        "case",
+        "developer-tools",
+        "formatting",
+        "string-manipulation",
+        "text"
+      ],
+      "techStack": [
+        "CSS3",
+        "HTML5",
+        "Vanilla JS"
+      ],
+      "difficulty": "Easy",
       "status": "live"
     },
     {
