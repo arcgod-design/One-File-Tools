@@ -89,7 +89,7 @@ const LEVELS=[
 
 const STORAGE_KEY="closure_chronicles_v1";
 
-function loadProgress(){try{const saved=localStorage.getItem(STORAGE_KEY);if(saved){const data=JSON.parse(saved);return{currentLevel:data.currentLevel||0,mistakes:data.mistakes||0,hintsUsed:data.hintsUsed||0,startTime:data.startTime||Date.now(),completed:data.completed||false,badges:data.badges||[],stars:data.stars||0}}catch(e){}return{currentLevel:0,mistakes:0,hintsUsed:0,startTime:Date.now(),completed:false,badges:[],stars:0}}
+function loadProgress(){try{const saved=localStorage.getItem(STORAGE_KEY);if(saved){const data=JSON.parse(saved);return{currentLevel:data.currentLevel||0,mistakes:data.mistakes||0,hintsUsed:data.hintsUsed||0,startTime:data.startTime||Date.now(),completed:data.completed||false,badges:data.badges||[],stars:data.stars||0};}}catch(e){}return{currentLevel:0,mistakes:0,hintsUsed:0,startTime:Date.now(),completed:false,badges:[],stars:0}}
 
 function saveProgress(){localStorage.setItem(STORAGE_KEY,JSON.stringify(progress))}
 
