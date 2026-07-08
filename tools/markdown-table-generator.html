@@ -99,17 +99,21 @@
     function generate(){
       var cols=parseInt(colsInput.value);
       var rows=parseInt(rowsInput.value);
-      
-      var thead='|'+Array(cols).fill('Header '+(i=0)).map(function(){return' Header '+(++i)}).join('|')+'|';
-      var sep='|'+Array(cols).fill('---').join('|');
-      
+
+      var headers=[];
+      for(var i=1;i<=cols;i++) headers.push('Header '+i);
+      var thead='| '+headers.join(' | ')+' |';
+      var sep='| '+headers.map(function(){return'---'}).join(' | ')+' |';
+
       var tbody='';
       for(var r=0;r<rows;r++){
-        tbody+='|'+Array(cols).fill('Cell '+(r*cols+i+1)).map(function(_,i){return' Cell '+(r*cols+i+1)}).join('|')+'|\n';
+        var cells=[];
+        for(var c=0;c<cols;c++) cells.push('Cell '+(r*cols+c+1));
+        tbody+='| '+cells.join(' | ')+' |\n';
       }
-      
-      output.value='| Header 1 | Header 2 | Header 3 |\n| --- | --- | --- |\n'+tbody.replace(/\n$/,'');
-      
+
+      output.value=thead+'\n'+sep+'\n'+tbody.replace(/\n$/,'');
+
       renderTable(cols,rows);
     }
     

@@ -8,7 +8,7 @@
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{--bg:#fafafa;--surface:#f1f5f9;--text:#1a1a1a;--muted:#64748b;--border:#e2e8f0;--accent:#2563eb;--success:#16a34a;--error:#dc2626;--radius:8px}
-    @media(prefers-color-scheme:dark){:root{--bg:#0a0a0a;--surface:#1a1a1a;--text:##e5e5e5;--muted:#94a3b8;--border:#334155;--accent:#3b82f6}}
+    @media(prefers-color-scheme:dark){:root{--bg:#0a0a0a;--surface:#1a1a1a;--text:#e5e5e5;--muted:#94a3b8;--border:#334155;--accent:#3b82f6}}
     body{font-family:system-ui,sans-serif;line-height:1.6;background:var(--bg);color:var(--text);min-height:100vh}
     .container{max-width:900px;margin:0 auto;padding:1.5rem}
     header{text-align:center;margin-bottom:1.5rem}
@@ -139,15 +139,20 @@ Switched to a new branch 'feature'</div>
       var fb=document.getElementById('feedback');
       if(correct){
         fb.className='feedback show success';
-        fb.textContent='✓ Correct! '+l.concept;
         state.score+=10;
         state.stars+=3-state.mistakes;
         state.mistakes=0;
-        if(state.level<levels.length-1)state.level++;
         save();
         document.getElementById('score').textContent=state.score;
         document.getElementById('stars').textContent=Math.max(0,state.stars);
-        setTimeout(render,2000);
+        if(state.level>=levels.length-1){
+          fb.textContent='🎉 Quest Complete! Final score: '+state.score+' | Stars: '+state.stars;
+        }else{
+          fb.textContent='✓ Correct! '+l.concept;
+          state.level++;
+          save();
+          setTimeout(render,2000);
+        }
       }else{
         state.mistakes++;
         fb.className='feedback show error';

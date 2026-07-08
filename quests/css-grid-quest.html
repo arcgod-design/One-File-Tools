@@ -145,12 +145,19 @@
       const correct=cols===l.cols&&gap===l.gap;
       const fb=document.getElementById('feedback');
       if(correct){
-        fb.className='feedback show success';
-        fb.textContent='Correct! '+(state.level===levels.length-1?'Quest Complete!':'Next level...');
-        state.score+=20;state.level=Math.min(state.level+1,levels.length-1);
+        state.score+=20;
         save();
         document.getElementById('score').textContent=state.score;
-        setTimeout(render,1500);
+        if(state.level===levels.length-1){
+          fb.className='feedback show success';
+          fb.textContent='🎉 Quest Complete! Final score: '+state.score;
+        }else{
+          fb.className='feedback show success';
+          fb.textContent='Correct! Next level...';
+          state.level++;
+          save();
+          setTimeout(render,1500);
+        }
       }else{
         fb.className='feedback show error';
         fb.textContent='Try again! Hint: '+l.hint;

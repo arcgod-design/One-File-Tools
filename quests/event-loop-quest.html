@@ -142,15 +142,20 @@ console.log('C');</div>
       var fb=document.getElementById('feedback');
       if(correct){
         fb.className='feedback show success';
-        fb.textContent='✓ Correct! The output is: '+l.choices[l.answer];
         state.score+=10;
         state.stars+=3-state.mistakes;
         state.mistakes=0;
-        if(state.level<levels.length-1)state.level++;
         save();
         document.getElementById('score').textContent=state.score;
         document.getElementById('stars').textContent=Math.max(0,state.stars);
-        setTimeout(render,2000);
+        if(state.level>=levels.length-1){
+          fb.textContent='🎉 Quest Complete! Final score: '+state.score+' | Stars: '+state.stars;
+        }else{
+          fb.textContent='✓ Correct! The output is: '+l.choices[l.answer];
+          state.level++;
+          save();
+          setTimeout(render,2000);
+        }
       }else{
         state.mistakes++;
         fb.className='feedback show error';

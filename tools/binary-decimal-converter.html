@@ -118,9 +118,10 @@
     }
     
     function renderBits(binary){
+      var padded=binary.padStart(8,'0');
       var html='';
-      for(var i=7;i>=0;i--){
-        var bit=binary[i]||'0';
+      for(var i=0;i<8;i++){
+        var bit=padded[i];
         html+='<div class="bit bit-'+bit+'">'+bit+'</div>';
       }
       bits.innerHTML=html;
