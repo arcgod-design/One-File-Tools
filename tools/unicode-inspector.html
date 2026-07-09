@@ -330,9 +330,7 @@ Built for One File Tools.
         <div class="char-list" id="charList"></div>
         <p class="empty-state" id="emptyState">Type or paste text above to inspect its characters.</p>
 
-        <div class="note">
-          Character <strong>names</strong> are provided for common ranges (Basic Latin, Latin-1 Supplement, common punctuation/symbols, and a set of frequently used emoji); characters outside those ranges show their Unicode <strong>category</strong> instead, since the full Unicode Character Database (150,000+ named characters) is too large to ship in a single offline file. Category detection itself uses native JS Unicode property regex (<code>\p{...}</code>), so it's accurate for any character.
-        </div>
+        <div class="note">Character <strong>names</strong> are provided for common ranges (Basic Latin, Latin-1 Supplement, common punctuation/symbols, and a set of frequently used emoji); characters outside those ranges show their Unicode <strong>category</strong> instead, since the full Unicode Character Database (150,000+ named characters) is too large to ship in a single offline file. Category detection itself uses native JS Unicode property regex (<code>\p{...}</code>), so it's accurate for any character.</div>
       </main>
 
       <p class="footer-note">Part of <a href="https://github.com/praveenscience/One-File-Tools">One File Tools</a>. Runs completely offline.</p>
@@ -455,9 +453,7 @@ Built for One File Tools.
 
       // Characters that render as nothing/blank but occupy a position — worth
       // flagging distinctly so users notice hidden formatting/tracking chars.
-      const INVISIBLE_CODE_POINTS = new Set([
-        0x0009, 0x000a, 0x000d, 0x0020, 0x00a0, 0x200b, 0x200c, 0x200d, 0x200e, 0x200f, 0x2028, 0x2029, 0xfeff
-      ]);
+      const INVISIBLE_CODE_POINTS = new Set([0x0009, 0x000a, 0x000d, 0x0020, 0x00a0, 0x200b, 0x200c, 0x200d, 0x200e, 0x200f, 0x2028, 0x2029, 0xfeff]);
 
       /** Returns a short display glyph for invisible characters, or null for visible ones. */
       function invisibleLabel(codePoint) {

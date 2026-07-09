@@ -9,6 +9,12 @@
   ],
   "portfolio": [
     {
+      "id": "desert",
+      "name": "Desert",
+      "description": "An elegant, sandy theme with a golden-beige gradient and bronze accents.",
+      "author": "Riya Halbhavi"
+    },
+    {
       "id": "developer",
       "name": "Developer",
       "description": "Dark developer-focused portfolio with project cards, skills grid, experience timeline, and testimonials.",
@@ -25,12 +31,6 @@
       "name": "Retro",
       "description": "A CRT-inspired desktop interface with a retro operating system aesthetic.",
       "author": "Praveen Kumar Purushothaman"
-    },
-    {
-      "id": "desert",
-      "name": "Desert",
-      "description": "An elegant, sandy theme with a golden-beige gradient and bronze accents.",
-      "author": "Riya Halbhavi"
     },
     {
       "id": "space",
