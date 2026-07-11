@@ -286,31 +286,24 @@ Built for One File Tools.
       </main>
 
       <main class="studio">
-  <span class="section-label">Details</span>
+        <span class="section-label">Details</span>
 
-  <div class="info-grid" id="infoGrid" hidden></div>
+        <div class="info-grid" id="infoGrid" hidden></div>
 
-  <p class="empty-state" id="emptyState">
-    Upload an image to see its dimensions and properties.
-  </p>
+        <p class="empty-state" id="emptyState">Upload an image to see its dimensions and properties.</p>
 
-  <!-- Social Media Compatibility -->
-  <div id="socialSection" hidden>
-    <span
-      class="section-label"
-      style="margin-top: 24px; display: block;"
-    >
-      Social Media Compatibility
-    </span>
-  
-    <div class="info-grid" id="socialGrid"></div>
-  </div>
+        <!-- Social Media Compatibility -->
+        <div id="socialSection" hidden>
+          <span class="section-label" style="margin-top: 24px; display: block"> Social Media Compatibility </span>
 
-  <div class="actions" id="actions" hidden>
-    <button class="btn-ghost" id="btnCopy" type="button">Copy info</button>
-    <button class="btn-ghost" id="btnClear" type="button">Clear</button>
-  </div>
-</main>
+          <div class="info-grid" id="socialGrid"></div>
+        </div>
+
+        <div class="actions" id="actions" hidden>
+          <button class="btn-ghost" id="btnCopy" type="button">Copy info</button>
+          <button class="btn-ghost" id="btnClear" type="button">Clear</button>
+        </div>
+      </main>
 
       <p class="footer-note">Part of <a href="https://github.com/praveenscience/One-File-Tools">One File Tools</a>. All processing happens in your browser.</p>
     </div>
@@ -368,7 +361,7 @@ Built for One File Tools.
         const ext = file.name.split(".").pop();
         return ext ? ext.toUpperCase() : "Unknown";
       }
-/** Returns a social-media compatibility label for the given target dimensions. */
+      /** Returns a social-media compatibility label for the given target dimensions. */
       function getCompatibilityStatus(imgWidth, imgHeight, targetWidth, targetHeight) {
         const imageRatio = imgWidth / imgHeight;
         const targetRatio = targetWidth / targetHeight;
@@ -379,11 +372,7 @@ Built for One File Tools.
         }
 
         // Same aspect ratio and image is larger
-        if (
-          Math.abs(imageRatio - targetRatio) < 0.01 &&
-          imgWidth >= targetWidth &&
-          imgHeight >= targetHeight
-        ) {
+        if (Math.abs(imageRatio - targetRatio) < 0.01 && imgWidth >= targetWidth && imgHeight >= targetHeight) {
           return "🟢 Good Fit";
         }
 
@@ -442,10 +431,10 @@ Built for One File Tools.
             height: 1080
           },
           {
-           id: "instagramPortrait",
-           label: "Instagram Portrait",
-           width: 1080,
-           height: 1350
+            id: "instagramPortrait",
+            label: "Instagram Portrait",
+            width: 1080,
+            height: 1350
           },
           {
             id: "instagramStory",
@@ -523,7 +512,7 @@ Built for One File Tools.
           div.appendChild(value);
           infoGrid.appendChild(div);
         });
-        
+
         socialGrid.innerHTML = "";
 
         platforms.forEach((platform) => {
@@ -538,13 +527,8 @@ Built for One File Tools.
           value.className = "value";
           value.style.fontSize = "15px";
           value.style.lineHeight = "1.25";
-          value.textContent = getCompatibilityStatus(
-            w,
-            h,
-            platform.width,
-            platform.height
-          );
-          
+          value.textContent = getCompatibilityStatus(w, h, platform.width, platform.height);
+
           const recommendation = document.createElement("div");
           recommendation.className = "label";
           recommendation.style.marginTop = "8px";
@@ -553,8 +537,7 @@ Built for One File Tools.
           recommendation.style.fontSize = "11px";
           recommendation.style.lineHeight = "1.2";
           recommendation.style.opacity = "0.8";
-          recommendation.textContent =
-            `Rec: ${platform.width} × ${platform.height}`;
+          recommendation.textContent = `Rec: ${platform.width} × ${platform.height}`;
 
           card.appendChild(label);
           card.appendChild(value);
