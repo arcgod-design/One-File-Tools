@@ -2332,6 +2332,14 @@
       "status": "live"
     },
     {
+      "id": "readme-template-generator",
+      "name": "README Template Generator",
+      "description": "Generate a professional GitHub README.md with customizable sections. Copy or download instantly.",
+      "category": "Text & Content",
+      "difficulty": "Medium",
+       "status": "live"
+    },
+    {
       "id": "regex-playground",
       "name": "Regex Playground",
       "shortDescription": "Test regular expressions against custom text with live highlighting and replacement.",
