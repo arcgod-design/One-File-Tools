@@ -167,7 +167,7 @@ Every tool in this collection is a standalone `.html` file containing all the HT
 | 138 | [Word / Character Counter](tools/word-character-counter.html) | Text & Content | Real-time word, character, and sentence counter for text of any length. | [Try it](https://one-file-tools.pages.dev/tools/word-character-counter) |
 | 139 | [YAML / JSON Converter](tools/yaml-json-converter.html) | JSON & API | Convert between YAML and JSON in either direction, with validation and pretty-printed output. | [Try it](https://one-file-tools.pages.dev/tools/yaml-json-converter) |
 
-> **Want to see your tool here?** Check out the [Contributing Guide](Contributing.md) and pick an idea from the [Ideas Board](#ideas-board).
+> **Want to see your tool here?** Use the [Contribution Wizard](https://one-file-tools.pages.dev/new) for a guided walkthrough, or check the [Contributing Guide](Contributing.md) and pick an idea from the [Ideas Board](#ideas-board).
 
 ## Ideas Board
 
@@ -476,6 +476,7 @@ One-File-Tools/
 ├── design-system/        # Pillar 6: Premium UI showcases with CSS/JS frameworks
 │   └── Contributing.md   # Design System contribution guide
 ├── Contributing.md       # Contribution guide
+├── new.html              # Interactive contribution wizard
 ├── index.html            # Generated: landing page (gitignored)
 ├── ReadMe.md             # This file
 ├── package.json
@@ -503,7 +504,7 @@ This repository is a proud participant in **[Social Summer of Code (SSoC)](https
 1. Browse the [Ideas Board](#ideas-board) or the [Issues](https://github.com/praveenscience/One-File-Tools/issues) tab
 2. Pick an issue labeled `Easy` or `Medium`
 3. Comment on the issue to get assigned
-4. Follow the [Contributing Guide](Contributing.md) to submit your PR
+4. Use the [Contribution Wizard](https://one-file-tools.pages.dev/new) or follow the [Contributing Guide](Contributing.md) to submit your PR
 5. Get your PR reviewed, merged, and earn your contribution points
 
 ### Contribution labels

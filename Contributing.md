@@ -4,6 +4,8 @@ Thank you for your interest in contributing! Whether you’re here through **SSo
 
 This guide will walk you through everything you need to know.
 
+> **New to contributing?** Try the [Contribution Wizard](https://one-file-tools.pages.dev/new) — an interactive walkthrough that generates the exact JSON, commands, and PR template for you.
+
 ---
 
 ## Table of Contents
