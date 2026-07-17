@@ -796,6 +796,11 @@
 
       let myChart = null;
       let currentMapData = null;
+      let resizeHandler = null;
+
+      function escHtml(s) {
+        return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+      }
 
       // Dual-view handling
       ["dragenter", "dragover", "dragleave", "drop"].forEach((eventName) => {
@@ -910,10 +915,14 @@
         sorted.forEach((mod) => {
           const el = document.createElement("div");
           el.className = "module-list-item serif";
-          el.innerHTML = `
-      <span class="module-name-truncate">${mod.name}</span>
-      <span class="stat-value-premium">${formatBytes(mod.value)}</span>
-    `;
+          const nameSpan = document.createElement("span");
+          nameSpan.className = "module-name-truncate";
+          nameSpan.textContent = mod.name;
+          const sizeSpan = document.createElement("span");
+          sizeSpan.className = "stat-value-premium";
+          sizeSpan.textContent = formatBytes(mod.value);
+          el.appendChild(nameSpan);
+          el.appendChild(sizeSpan);
           topModulesList.appendChild(el);
         });
       }
@@ -934,8 +943,8 @@
             borderRadius: 8,
             formatter: function (info) {
               const size = formatBytes(info.value);
-              return `<div style="font-family: 'Lora', serif; font-size: 1.1rem; margin-bottom: 4px;">${info.name}</div>
-                <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: #736E6A;">${size}</div>`;
+              return `<div style="font-family: 'Lora', serif; font-size: 1.1rem; margin-bottom: 4px;">${escHtml(info.name)}</div>
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: #736E6A;">${escHtml(size)}</div>`;
             }
           },
           series: [
@@ -998,13 +1007,15 @@
           }
         });
 
-        window.addEventListener("resize", () => myChart.resize());
+        if (resizeHandler) window.removeEventListener("resize", resizeHandler);
+        resizeHandler = () => myChart.resize();
+        window.addEventListener("resize", resizeHandler);
       }
 
       function showToast(message, type = "info") {
         const toast = document.createElement("div");
         toast.className = `toast ${type}`;
-        toast.innerHTML = message;
+        toast.textContent = message;
         toastContainer.appendChild(toast);
         setTimeout(() => {
           toast.style.animation = "fadeOut 0.5s forwards";
